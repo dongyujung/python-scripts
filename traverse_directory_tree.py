@@ -1,6 +1,6 @@
 from os import walk
 
-rootDir = 'C:\Users\Rong Lu\Documents\Yujung'
+rootDir = 'C:\Users\Documents\Yujung'
 
 for dirName, subdirList, fileList in os.walk(rootDir):
     print 'Found directory: %s' % dirName
