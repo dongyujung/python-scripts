@@ -7,4 +7,4 @@ def yes_or_no(question):
     else:
         return yes_or_no("Please enter ")
 
-a = yes_or_no('question')
+a = yes_or_no('Would you like to continue?')
