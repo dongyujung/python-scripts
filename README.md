@@ -50,11 +50,13 @@ print(f)
 
 ### split_method.py  
 
+```python
 x='ginger,garlic,onion'
 x.split(',')
 
 y='ginger  garlic  onion'
 y.split()
+```
 
 ### traverse_directory_tree.py  
 
@@ -63,7 +65,7 @@ y.split()
 for dirName, subdirList, fileList in os.walk(rootDir):
     print 'Found directory: %s' % dirName
     for fname in fileList:
-print '\t%s' % fname
+        print '\t%s' % fname
 ```
 
 
