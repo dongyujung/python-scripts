@@ -14,3 +14,12 @@ def find_matching_file(pattern, path):
                 return os.path.join(path, each_file)
 ```
 
+### join_paths.py  
+
+```python
+# Join directory path and file names
+print(os.path.join('/path/', 'filename'))
+```
+
+
+
