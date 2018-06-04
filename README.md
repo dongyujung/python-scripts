@@ -73,7 +73,7 @@ for dirName, subdirList, fileList in os.walk(rootDir):
 ```python
 def yes_or_no(question):
     """
-    Returns True for input starting with y or N
+    Returns True for input starting with y or Y
     Returns False for input starting with n or N
     Repeat question when neither y nor n was input
     """
