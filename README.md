@@ -48,5 +48,25 @@ f = re.search(r'Gi\wg\wr', 'GingerBread').span()
 print(f)
 ```
 
+### split_method.py  
+
+x='ginger,garlic,onion'
+x.split(',')
+
+y='ginger  garlic  onion'
+y.split()
+
+### traverse_directory_tree.py  
+
+```python
+# Traversing directory tree with os.walk()
+for dirName, subdirList, fileList in os.walk(rootDir):
+    print 'Found directory: %s' % dirName
+    for fname in fileList:
+print '\t%s' % fname
+```
+
+
+
 
 
