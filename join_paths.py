@@ -2,4 +2,4 @@
 
 import os
 
-print(os.path.join('/directory/', 'filename'))
+print(os.path.join('/path/', 'filename'))
