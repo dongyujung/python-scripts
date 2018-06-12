@@ -1,10 +1,7 @@
 '''
 Serializing python dictionary with cPickle.
-
 This process turns a Python object into a series of bytes.
-
 By default, the pickle contains only ASCII characters for easier understanding in print.
-
 cPickle uses C instead of Python, therefore many times faster than the Python implementation (pickle)
 '''
 
