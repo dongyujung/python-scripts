@@ -192,3 +192,10 @@ with open(file_path) as f:
         print(line)
 ```
 
+### Sort by User-defined Key  
+
+```py
+list1 = [(1, 2), (3, 3), (1, 1)] 
+
+list1.sort(key=lambda x: x[1])
+```
