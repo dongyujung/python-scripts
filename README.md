@@ -199,3 +199,15 @@ list1 = [(1, 2), (3, 3), (1, 1)]
 
 list1.sort(key=lambda x: x[1])
 ```
+
+### filter()  
+
+filter(fun, sequence)  
+
+```py
+seq = [0, 1, 2, 3, 5, 8, 13] 
+result = filter(lambda x: x % 2 == 0, seq) 
+print(list(result))
+# >> [0, 2, 6]
+```
+
