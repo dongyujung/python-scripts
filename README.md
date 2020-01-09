@@ -1,4 +1,33 @@
-# python_scripts
+# Python
+
+### List Complrehension  
+
+
+### Lambda Function  
+
+With filter(fun, seq), or map(fun, seq)  
+
+```python
+# Lambda function
+double = lambda x: x * 2
+print(double(3))
+
+my_list = [1, 5, 4, 6, 8, 11, 3, 12]
+filtered_list = list(filter(lambda x: x % 2 == 0, my_list))
+mapped_list = list(map(lambda x: x ** 2, my_list))
+```
+
+### Global Variable  
+
+```python
+c = 0
+def add():
+    global c
+    c += 2
+    print(c)
+add()
+print(c)
+```
 
 ### find_matching_file.py  
 
@@ -200,14 +229,5 @@ list1 = [(1, 2), (3, 3), (1, 1)]
 list1.sort(key=lambda x: x[1])
 ```
 
-### filter()  
 
-filter(fun, sequence)  
-
-```py
-seq = [0, 1, 2, 3, 5, 8, 13] 
-result = filter(lambda x: x % 2 == 0, seq) 
-print(list(result))
-# >> [0, 2, 6]
-```
 
