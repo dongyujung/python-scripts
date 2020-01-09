@@ -13,7 +13,9 @@ double = lambda x: x * 2
 print(double(3))
 
 my_list = [1, 5, 4, 6, 8, 11, 3, 12]
+# Filter
 filtered_list = list(filter(lambda x: x % 2 == 0, my_list))
+# Map
 mapped_list = list(map(lambda x: x ** 2, my_list))
 ```
 
@@ -27,6 +29,175 @@ def add():
     print(c)
 add()
 print(c)
+```
+``` 
+2
+2
+```
+
+### Fractions  
+
+```python
+import fractions
+# Output: 3/2
+print(fractions.Fraction(1.5))
+# Output: 1/3
+print(fractions.Fraction(1,3))
+```
+
+### Math  
+
+```python
+import math
+print(math.pi)
+print(math.exp(2))
+```
+
+### Random  
+
+```python
+import random
+# chooses from 1, 2, 3, 4, 5
+random.randint(1, 5)    
+# chooses from 1, 2, 3, 4
+random.randrange(1, 5)
+# chooses from 1, 3
+random.randrange(1, 5, 2)
+# floating point number in the range [0.0, 1.0)
+random.random()
+# random floating point number N such that a <= N <= b
+random.uniform(1.2, 3.6)
+
+x = ['a', 'b', 'c', 'd', 'e']
+# Get random choice
+random.choice(x)
+# Shuffle x
+random.shuffle(x)
+```
+
+### List  
+
+```python
+my_list = ['p','r','o','b','l','e','m']
+# delete one item
+del my_list[2]
+my_list = ['p','r','o','b','l','e','m']
+my_list.remove('p')
+# Output: 'o'
+print(my_list.pop(1))
+# Empty list
+my_list.clear()
+```
+
+### List Comprehension  
+
+```python
+pow2 = [2 ** x for x in range(10)]
+pow3 = [x**2 for x in range(10) if x % 2 == 0]
+```
+
+### Tuple  
+Immutable list.  
+Can index, negative index, slice, etc.  
+```python
+my_tuple = (1, 2, 3)
+```
+
+### Strings  
+
+```python
+str1 = 'Hello'
+str2 ='World!'
+# Concatenation
+print(str1 + str2)
+# True
+'a' in 'program'
+str = 'cold'
+# enumerate():  [(0, 'c'), (1, 'o'), (2, 'l'), (3, 'd')]
+list_enumerate = list(enumerate(str))
+"PythonProgramming".lower()
+"PythonProgramming".upper()
+"This will split all words into a list".split()
+' '.join(['This', 'will', 'join', 'all', 'words', 'into', 'a', 'string'])
+'Happy New Year'.find('ew')
+'Happy New Year'.replace('Happy', 'Brilliant')
+```
+
+String Formatting  
+```
+>>> aName = "Dave"
+>>> age = 25
+>>> print("{} is {} years old.".format(aName, age))
+Dave is 25 years old.
+>>> print("{0} is {1} years old.".format(aName, age))
+Dave is 25 years old.
+>>> print("{1} is {0} years old.".format(aName, age))
+25 is Dave years old.
+>>> print("{:s} is {:d} years old.".format(aName, age))
+Dave is 25 years old.
+>>> price = 24
+>>> item = "banana"
+>>> print("The {:10s} costs {:10.2f} cents.".format(item, price))
+The banana     costs      24.00 cents.
+>>> print("The {0:10s} costs {1:10.2f} cents.".format(item, price))
+The banana     costs      24.00 cents.
+>>> print("The {:<10s} costs {:<10.2f} cents.".format(item, price))
+The banana     costs 24.00      cents.
+```
+
+### Sets  
+
+A set is an unordered collection of items. Every element is unique (no duplicates) 
+and must be immutable (which cannot be changed).  
+However, the set itself is mutable. We can add or remove items from it.  
+
+```python
+my_set = {1, 2, 3}
+my_set.add(2)
+# add multiple elements
+my_set.update([2,3,4])
+# discard an element: if the item does not exist in the set, it remains unchanged
+my_set.discard(4)
+# remove an element
+my_set.remove(6)
+2 in my_set
+
+A = {1, 2, 3, 4, 5}
+B = {4, 5, 6, 7, 8}
+# Output: {1, 2, 3, 4, 5, 6, 7, 8}
+print(A | B)
+A.union(B)
+B.union(A)
+# Output: {4, 5}
+print(A & B)
+A.intersection(B)
+# Output: {1, 2, 3}
+print(A - B)
+# Output: {1, 2, 3, 6, 7, 8}
+print(A ^ B)
+```
+
+### Dictionary  
+
+```python
+my_dict = {'name':'Jack', 'age': 26}
+# Output: Jack
+print(my_dict['name'])
+# Output: 26
+print(my_dict.get('age'))
+
+squares = {1:1, 2:4, 3:9, 4:16, 5:25}  
+# remove a particular item
+# Output: 16
+print(squares.pop(4))
+
+marks = {'math': 1, 'english':2, 'science':1}
+# Output [('english', 2), ('math', 1), ('science', 1)]
+sorted(marks.items(), key=lambda x: (-x[1], x[0]))
+
+# Dictionary Comprehension
+squares = {x: x*x for x in range(6)}
+odd_squares = {x: x*x for x in range(11) if x%2 == 1}
 ```
 
 ### find_matching_file.py  
