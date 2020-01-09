@@ -1,8 +1,5 @@
 # Python
 
-### List Complrehension  
-
-
 ### Lambda Function  
 
 With filter(fun, seq), or map(fun, seq)  
@@ -94,6 +91,7 @@ my_list.clear()
 ```python
 pow2 = [2 ** x for x in range(10)]
 pow3 = [x**2 for x in range(10) if x % 2 == 0]
+["Even" if i%2==0 else "Odd" for i in range(10)]
 ```
 
 ### Tuple  
@@ -198,6 +196,116 @@ sorted(marks.items(), key=lambda x: (-x[1], x[0]))
 # Dictionary Comprehension
 squares = {x: x*x for x in range(6)}
 odd_squares = {x: x*x for x in range(11) if x%2 == 1}
+```
+
+### File I/O  
+
+#### Reading  
+```python
+# File Handling
+
+# Open a file
+# open() function returns a file object, 
+# which has a read() method for reading the content of the file.
+f = open(file_path, "r")
+print(f.read())
+# Specifying encoding type
+f = open('./text', mode="r", encoding='utf-8')
+
+# Read parts of the file
+f = open(file_path, "r")
+# Reads five characters at a time
+# Once read, goes on to next part
+print(f.read(5))    
+
+# Read lines
+f = open(file_path, "r")
+print(f.readline())     # Reads one line at a time
+
+# Looping through the lines of the file
+f = open(file_path, "r")
+for line in f:
+    print(line)
+# Closing a file will free up the resources that were tied with the file
+f.close()
+
+# With statement
+# Cleaner syntax and exceptions handling
+# Any files opened will be closed automatically after it is done. 
+with open(file_path) as f:
+    for line in f:
+        print(line)
+
+# Read a file line by line, output into a list.
+with open(file_path) as f:
+    data = f.readlines()
+# Without end character \n
+with open(file_path) as f:
+    lines = f.read().splitlines()
+
+# Drop spaces and new lines (\n) from each line.
+with open(file_path) as f:
+    for line in f:
+        line = line.strip()
+        print(line)
+
+# Splitting Lines
+for line in data:
+    words = line.split(",")
+    print(words)
+```
+
+#### Writing  
+
+```python
+with open('text2', 'w', encoding='utf-8') as f:
+    f.write('My first line\n')
+    f.write('Second line\n')
+    f.write('Third line\n') 
+```
+
+### Directory  
+
+```python
+import os
+os.getcwd()
+#>> 'C:\\Program Files\\PyScripter'
+print(os.getcwd())
+#>> C:\Program Files\PyScripter
+os.chdir('C:\\Python33')
+# List directories/files
+os.listdir()
+# Make directory
+os.mkdir('test')
+# Rename directory
+os.rename('test','new_one')
+# Remove file
+os.remove('old.txt')
+# Remove directory
+os.rmdir('new_one')
+```
+
+### JSON  
+
+```python
+import json
+
+data = {"president": {"name": "Zaphod Beeblebrox", "species": "Betelgeusian"}}
+
+with open('data_file.json', 'w') as write_file:
+    # Dictionary to JSON FILE
+    json.dump(data, write_file)
+
+with open('data_file.json') as read_file:
+    # Reads data from JSON FILE to dictionary
+    read_data = json.load(read_file)
+
+# Dictionary to JSON STRING
+data_string = json.dumps(read_data)
+print(data_string)
+# JSON STRING to dictionary
+loaded_dict = json.loads(data_string)
+print(loaded_dict)
 ```
 
 ### find_matching_file.py  
@@ -342,55 +450,7 @@ for path, subdir, files in os.walk(path):
 ```
 
 ### file_open_read.py
-```py
-# File Handling
 
-# Open a file
-# open() function returns a file object, 
-# which has a read() method for reading the content of the file.
-f = open(file_path, "r")
-print(f.read())
-
-# Read parts of the file
-f = open(file_path, "r")
-print(f.read(5))    # Reads five characters at a time
-
-# Read lines
-f = open(file_path, "r")
-print(f.readline())     # Reads one line at a time
-
-# Looping through the lines of the file
-f = open(file_path, "r")
-for line in f:
-    print(line)
-
-f.close()
-
-# With statement
-# Cleaner syntax and exceptions handling
-# Any files opened will be closed automatically after it is done. 
-with open(file_path) as f:
-    for line in f:
-        print(line)
-
-# Read a file line by line, output into a list.
-with open(file_path) as f:
-    data = f.readlines()
-# Without end character \n
-with open(file_path) as f:
-    lines = f.read().splitlines()
-
-# Splitting Lines
-for line in data:
-    words = line.split(",")
-    print(words)
-
-# Drop spaces and new lines (\n) from each line.
-with open(file_path) as f:
-    for line in f:
-        line = line.strip()
-        print(line)
-```
 
 ### Sort by User-defined Key  
 
@@ -400,5 +460,7 @@ list1 = [(1, 2), (3, 3), (1, 1)]
 list1.sort(key=lambda x: x[1])
 ```
 
-
+References:  
+https://www.programiz.com/python-programming
+https://realpython.com/python-json/
 
