@@ -3,7 +3,7 @@
 expression | matches
 ---|---
 \d | Any digit (0-9)
-\D | 
+\D | Any non-digit character
 . | Any single character
 [abc] | Matching specific characters
 [^abc] | Excluding specific characters
