@@ -2,7 +2,7 @@
 
 ### Lambda Function  
 
-With filter(fun, seq), or map(fun, seq)  
+With filter(**condition**, seq), or map(function, seq)  
 
 ```python
 # Lambda function
@@ -308,6 +308,14 @@ loaded_dict = json.loads(data_string)
 print(loaded_dict)
 ```
 
+### Sort by User-defined Key  
+
+```py
+list1 = [(1, 2), (3, 3), (1, 1)] 
+
+list1.sort(key=lambda x: x[1])
+```
+
 ### find_matching_file.py  
 
 ```python
@@ -449,18 +457,11 @@ for path, subdir, files in os.walk(path):
             os.rename(os.path.join(path, name), os.path.join(path, 'm' + name[1:]))
 ```
 
-### file_open_read.py
 
 
-### Sort by User-defined Key  
 
-```py
-list1 = [(1, 2), (3, 3), (1, 1)] 
-
-list1.sort(key=lambda x: x[1])
-```
 
 References:  
-https://www.programiz.com/python-programming
+https://www.programiz.com/python-programming  
 https://realpython.com/python-json/
 
