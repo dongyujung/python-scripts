@@ -1,5 +1,7 @@
 # Python
 
+Regular expression notes: [regex.md](https://github.com/dongyujung/python-scripts/blob/master/regex.md)
+
 ### Lambda Function  
 
 With filter(**condition**, seq), or map(function, seq)  
