@@ -121,6 +121,10 @@ list_enumerate = list(enumerate(str))
 ' '.join(['This', 'will', 'join', 'all', 'words', 'into', 'a', 'string'])
 'Happy New Year'.find('ew')
 'Happy New Year'.replace('Happy', 'Brilliant')
+'   hello world  \n'.strip()
+'---hello====='.strip('-')
+# Strips both - and =
+'---hello====='.strip('-=')
 ```
 
 String Formatting  
@@ -316,6 +320,61 @@ print(loaded_dict)
 list1 = [(1, 2), (3, 3), (1, 1)] 
 
 list1.sort(key=lambda x: x[1])
+```
+
+### Datetime  
+
+```python
+from datetime import datetime
+from datetime import date
+from datetime import time
+from datetime import timedelta
+datetime_object = datetime.now()
+date_object = date.today()
+# Prints in date/time format
+print(date_object)
+d = date(2019, 4, 13)
+# From Unix timestamp
+date.fromtimestamp(1326244364)
+datetime.fromtimestamp(1326244364)
+# time(hour, minute and second)
+a = time(11, 34, 56)
+# time(hour, minute, second, microsecond)
+b = time(11, 34, 56, 234566)
+a.hour
+a.minute
+a.second
+b.microsecond
+c = datetime(2017, 11, 28, 23, 55, 59, 342380)
+c.year
+c.month
+c.hour
+d = datetime(2017, 11, 26, 10, 55, 59, 342380)
+# Timedelta
+c-d
+e = timedelta(seconds=33)
+e.total_seconds()
+
+# Datetime object to string: strftime()
+now = datetime.now()
+now.strftime("%H:%M:%S")
+now.strftime("%m/%d/%Y, %H:%M:%S")
+# String to datetime object: strptime()
+datetime.strptime("2019-01-15", "%Y-%m-%d")
+```
+
+### Regular Expression  
+
+```python
+# If it matches in the beginning
+re.match(r'\Athe', 'the sun')
+# Returns ['12', '89', '34']
+re.findall('\d+', 'hello 12 hi 89. Howdy 34')
+# Returns ['Twelve:', ' Eighty nine:', '.']
+re.split('\d+', 'Twelve:12 Eighty nine:89.')
+# Returns 'abc-12-de-23-f45-6'
+re.sub('\s+', '-', 'abc 12 de 23 \n f45 6')
+
 ```
 
 ### find_matching_file.py  
