@@ -377,6 +377,15 @@ re.sub('\s+', '-', 'abc 12 de 23 \n f45 6')
 
 ```
 
+### Read command line arguments: sys.argv  
+
+```python
+import sys
+
+print("First Argument of sys.argv: name of program = ", sys.argv[0])
+print("Argument List: ", str(sys.argv))
+```
+
 ### find_matching_file.py  
 
 ```python
