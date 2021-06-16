@@ -149,6 +149,13 @@ The banana     costs      24.00 cents.
 The banana     costs 24.00      cents.
 ```
 
+```
+>>> sentence = ['this', 'is', 'a', 'sentence']
+>>> '-'.join(sentence)
+'this-is-a-sentence'
+```
+
+
 ### Sets  
 
 A set is an unordered collection of items. Every element is unique (no duplicates) 
@@ -168,17 +175,19 @@ my_set.remove(6)
 
 A = {1, 2, 3, 4, 5}
 B = {4, 5, 6, 7, 8}
-# Output: {1, 2, 3, 4, 5, 6, 7, 8}
+# Union, Output: {1, 2, 3, 4, 5, 6, 7, 8}
 print(A | B)
 A.union(B)
 B.union(A)
-# Output: {4, 5}
+# Intersection, Output: {4, 5}
 print(A & B)
 A.intersection(B)
-# Output: {1, 2, 3}
+# Difference, Output: {1, 2, 3}
 print(A - B)
-# Output: {1, 2, 3, 6, 7, 8}
+print(A.difference(B))
+# Symmetric Difference, Output: {1, 2, 3, 6, 7, 8}
 print(A ^ B)
+print(A.symmetric_difference(B))
 ```
 
 ### Dictionary  
@@ -202,7 +211,43 @@ sorted(marks.items(), key=lambda x: (-x[1], x[0]))
 # Dictionary Comprehension
 squares = {x: x*x for x in range(6)}
 odd_squares = {x: x*x for x in range(11) if x%2 == 1}
+
+# defaultdict: no need to set first value
+s = [('yellow', 1), ('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)]
+d = defaultdict(list)
+for k, v in s:
+    d[k].append(v)
+sorted(d.items())
+[('blue', [2, 4]), ('red', [1]), ('yellow', [1, 3])]
+
 ```
+
+### Args and Kwargs  
+
+Special Symbols Used for passing arguments:-
+
+1.)*args (Non-Keyword Arguments)  
+
+2.)**kwargs (Keyword Arguments)  
+
+```python
+def print_args(var, *argv):
+    print(var)
+    for arg in argv:
+        print(*argv)
+
+print_args('a', 'b', 'c', 'd')
+
+def print_kwargs(**kwargs):
+    for key, value in kwargs.items():
+        print(f'{key} is {value}')
+
+print_kwargs(first_name='Jane', last_name='Doe')
+
+jane_doe = {'first name': 'Jane', 'last name': 'Doe'}
+print_kwargs(**jane_doe)    # Remember to add **
+```
+
 
 ### File I/O  
 
@@ -321,6 +366,7 @@ list1 = [(1, 2), (3, 3), (1, 1)]
 
 list1.sort(key=lambda x: x[1])
 ```
+sorted
 
 ### Datetime  
 
